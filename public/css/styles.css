@@ -1,0 +1,59 @@
+nav{
+  
+}
+
+nav ul{
+  margin:0;
+  list-style:none;
+}
+
+nav ul li{
+  display:inline-block;
+}
+
+nav ul li a{
+  background:white;
+  position:relative;
+  top:2px;
+  border-top:black solid 2px;
+  border-right:black solid 2px;
+  border-left:black solid 2px;
+  display:inline-block;
+  padding:5px;
+}
+
+.active_tab_head{
+  z-index:2;
+}
+.inactive_tab_head{
+  z-index:0;
+}
+
+.active{
+  z-index:2;
+  display:block;
+}
+
+#contents{
+  position:relative;
+  border:black solid 2px;
+}
+
+
+
+.tab_content{
+}
+
+.hide{
+  display:none;
+}
+
+#about{
+}
+
+#concerts{
+}
+
+#discography{
+}
+

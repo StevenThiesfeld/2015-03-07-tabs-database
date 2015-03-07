@@ -1,4 +1,25 @@
 <h3>Product ID: <%= product.id %></h3>
-  <p><%= product.general_info %></p>
-  <p><%= product.technical_specs %></p>
-  <p><%= product.where_to_buy %></p>
+
+<nav>
+  <ul>
+    <li><a href="#">General Info</a></li>
+    <li><a href="#">Technical Specs</a></li>
+    <li><a href="#">Where to Buy</a></li>
+  </ul>
+</nav>
+
+<div id="contents">
+  <div id="tab_contents">
+    <p><%= product.general_info %></p>
+  </div>
+  <!--tab-contents -->
+  <div id="tab_contents">
+    <p><%= product.technical_specs %></p>
+  </div>
+  <!--tab_contents -->
+  <div id="tab_contents">
+    <p><%= product.where_to_buy %></p>
+  </div>
+  <!--tab_contents -->
+</div>
+<!--contents -->
