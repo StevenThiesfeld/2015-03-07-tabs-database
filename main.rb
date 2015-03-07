@@ -15,3 +15,40 @@ get "/" do
   erb :homepage
 end
 
+get "/products/all" do
+  @products = Product.all
+  erb :"product_view"
+end
+
+post "/products/" do
+  @products = Product.find(params["id"])
+  erb :"product_view"
+end
+
+get "/products/new" do
+  erb :"new_product"
+end
+
+post "/create-product" do
+  Product.new(params).insert
+  redirect "/products/all"
+end
+
+post "/products/edit" do
+  @product = Product.find(params["id"])
+  erb :"edit_product"
+end
+
+post "/confirm-edit" do
+  product = Product.find(params["id"])
+  product.edit(params)
+  product.save
+  redirect "/products/all"
+end
+
+post "/products/delete" do
+  product = Product.find(params["id"])
+  product.delete
+  redirect "/products/all"
+end
+

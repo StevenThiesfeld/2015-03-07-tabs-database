@@ -47,7 +47,7 @@ module DatabaseMethods
  #  Changes all attributes in the object that are present in params.
   
   
-  def edit_object(params)
+  def edit(params)
     params.each do |field, value|
       thaw_field = field.dup.insert(0, "@")
       self.instance_variable_set(thaw_field, value) if value != ""

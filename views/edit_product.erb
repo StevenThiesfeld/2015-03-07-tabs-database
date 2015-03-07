@@ -1,0 +1,8 @@
+<h1>Edit Product: <%= @product.id %></h1>
+<br>
+<form action="/confirm-edit" method="post">
+  <input type="hidden" name="id" value="<%= @product.id %>">
+  General Information: <textarea name="general_info"><%= @product.general_info %></textarea><br>
+  Technical Specs: <textarea name="technical_specs"><%= @product.technical_specs %></textarea><br>
+  Where to Buy: <textarea name="where_to_buy"> <%= @product.where_to_buy %></textarea>
+  <input type="submit" value="Edit Product">

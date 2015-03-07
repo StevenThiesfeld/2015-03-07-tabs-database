@@ -1,0 +1,27 @@
+<h1>Welcome to Products Inc.</h1>
+
+<nav>
+  <ul>
+    <li><a href="/products/all">All Products</a></li>
+    <li><a href="/products/new">New Product</a></li>
+    <li>
+      <form action="/products/" method="post">
+        Product by ID<input type="number" name="id">
+        <input type="submit" value="Find">
+      </form>
+    </li>
+    
+    <li>
+      <form action="/products/edit" method="post">
+        Product by ID<input type="number" name="id">
+        <input type="submit" value="Edit">
+      </form>
+    </li>
+    <li>
+      <form action="/products/delete" method="post">
+        Product by ID<input type="number" name="id">
+        <input type="submit" value="Delete">
+      </form>
+    </li>
+  </ul>
+</nav>

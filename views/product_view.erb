@@ -1,0 +1,7 @@
+<% if @products.is_a?(Array)  %>
+  <% @products.each do |product|  %>
+  <%= erb(:"partial_product", :locals => {:product => product}) %>
+  <% end  %>
+<% else  %>
+  <%= erb(:"partial_product", :locals => {:product => @products}) %>
+<% end  %>
