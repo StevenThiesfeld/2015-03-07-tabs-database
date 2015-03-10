@@ -2,6 +2,11 @@
   <% @products.each do |product|  %>
   <%= erb(:"partial_product", :locals => {:product => product}) %>
   <% end  %>
+  
+  <a id="next_link" href="/products/next">Next Page</a>
+  <% if @start_num != 0  %>
+  <a id="prev_link" href="/products/next">Previous</a>
+  <% end  %>
 <% else  %>
   <%= erb(:"partial_product", :locals => {:product => @products}) %>
 <% end  %>

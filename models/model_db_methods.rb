@@ -181,6 +181,12 @@ module ClassMethods
     results_as_objects(results)
   end
   
+  def get_range(start_num)
+    table = self.to_s.pluralize.downcase
+    results = DATABASE.execute("SELECT * FROM '#{table}' LIMIT 10 OFFSET #{start_num}")   
+    results_as_objects(results)
+  end
+  
   # Public: #results_as_objects
 #   Creates appropriate object from SQlite hashes
 #

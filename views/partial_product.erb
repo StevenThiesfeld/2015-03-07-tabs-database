@@ -1,28 +1,30 @@
-<h3>Product ID: <%= product.id %></h3>
-<div id="<%= product.id %>" class="tab_window">
-  <nav>
-    <ul>
-      <li><a class="tab_tag" href="#general_info_<%=product.id  %>">General Info</a></li>
-      <li><a class="tab_tag" href="#technical_specs_<%=product.id  %>">Technical Specs</a></li>
-      <li><a class="tab_tag" href="#where_to_buy_<%=product.id  %>">Where to Buy</a></li>
-    </ul>
-  </nav>
+<div class="product_container">
+  <h3>Product ID: <%= product.id %></h3>
+  <div id="<%= product.id %>" class="tab_window">
+    <nav>
+      <ul>
+        <li><a class="tab_tag" href="<%=product.id  %>_general_info">General Info</a></li>
+        <li><a class="tab_tag" href="<%=product.id  %>_technical_specs">Technical Specs</a></li>
+        <li><a class="tab_tag" href="<%=product.id  %>_where_to_buy">Where to Buy</a></li>
+      </ul>
+    </nav>
 
-  <div id="contents">
+    <div id="contents">
   
-    <div id="general_info_<%=product.id  %>" class="tab_contents">
-      <p><%= product.general_info %></p>
+      <div id="<%=product.id  %>_general_info" class="tab_contents">
+        <p><%= product.general_info %></p>
+      </div>
+      <!--tab-contents -->
+      <div id="<%=product.id  %>_technical_specs" class="tab_contents">
+        <p><%= product.technical_specs %></p>
+      </div>
+      <!--tab_contents -->
+      <div id="<%=product.id  %>_where_to_buy" class="tab_contents">
+        <p><%= product.where_to_buy %></p>
+      </div>
+      <!--tab_contents -->
     </div>
-    <!--tab-contents -->
-    <div id="technical_specs_<%=product.id  %>" class="tab_contents">
-      <p><%= product.technical_specs %></p>
-    </div>
-    <!--tab_contents -->
-    <div id="where_to_buy_<%=product.id  %>" class="tab_contents">
-      <p><%= product.where_to_buy %></p>
-    </div>
-    <!--tab_contents -->
+    <!--contents -->
   </div>
-  <!--contents -->
+  <!--tab_window -->
 </div>
-<!--tab_window -->

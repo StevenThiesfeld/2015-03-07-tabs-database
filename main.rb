@@ -9,15 +9,17 @@ require_relative "database/database-setup.rb"
 require_relative "models/product.rb"
 
 
-
-
 get "/" do
   erb :homepage
 end
 
 get "/products/all" do
-  @products = Product.all
+  @products = Product.get_range(0)
   erb :"product_view"
+end
+
+post "/products/next" do
+  Product.get_range_array(params["range"]).to_json
 end
 
 post "/products/" do
