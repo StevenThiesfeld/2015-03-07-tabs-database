@@ -1,6 +1,7 @@
 require 'rubygems'
 require 'bundler/setup'
 Bundler.require(:default)
+require 'active_support/inflector'
 DATABASE = SQLite3::Database.new("products.db")
 require_relative "models/model_db_methods.rb"
 require_relative "database/database-setup.rb"
