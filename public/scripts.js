@@ -6,7 +6,6 @@ window.onload = function(){
   prev_link = document.getElementById("prev_link");
   prev_link.style.display = "none";
   next_link.addEventListener("click", nextPage);
-  // prev_link.addEventListener("click", prevPage);
   
   
   //gets all tab windows
@@ -37,7 +36,7 @@ window.onload = function(){
   }
 }
 
-
+//sets the appropriate tab to active and hides the others
 var swapTab = function(e){
   e.preventDefault()
   var selectedId = getHash( this.getAttribute('href') );
@@ -52,7 +51,7 @@ var swapTab = function(e){
     }
   }
 }
-
+//used to link an anchor's href to a tab's id 
 function getHash( url ) {
   var hashPos = url.lastIndexOf ( '#' );
   return url.substring( hashPos + 1 );
@@ -66,6 +65,7 @@ function getTabWindow( url ) {
 // PAGINATION===============================================
 var getRange = 0
 
+//generates the Http request for the next 10 products
 var nextPage = function(event){
   event.preventDefault();
   var form = new FormData();
@@ -77,14 +77,16 @@ var nextPage = function(event){
   request.addEventListener("load", updatePage);
 }
 
+//populates existing divs with the new results
 var updatePage = function(){
-  if (getRange !== 0){prev_link.style.display = "inline"}else{prev_link.style.display = "none"};
+  if (getRange !== 0)
+    {prev_link.style.display = "inline"}
+  else
+    {prev_link.style.display = "none"};
   var new_products = JSON.parse(this.response);
   productDivs = document.getElementsByClassName("product_container");
   for (var i = 0; i < new_products.length; i++){
-    // console.log(new_products);
     productDivs[i].children[0].innerHTML = "Product ID: " + new_products[i].id;
-    // document.getElementById()
   }
   
 }
